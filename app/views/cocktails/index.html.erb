@@ -1,7 +1,8 @@
 <div class="container">
-<h1>Catchem'll Cocktails</h1>
+<h1>Catchem'all Cocktails</h1>
   <% @cocktails.each do |cocktail| %>
-    <div class="card">
+    <div class="card" >
+      <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
       <div class="card-body">
         <h5 class="card-title"><%= cocktail.name %></h5>
         <%= link_to "see details", cocktail_path(cocktail) %>
