@@ -1,21 +1,40 @@
-<div class="banner">
-  <%= cl_image_tag("https://images.unsplash.com/photo-1539788292313-547a2c372229?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80") %>
-</div>
 
 
 
-<div class="container">
-<h1>Catchem'all Cocktails</h1>
-  <% @cocktails.each do |cocktail| %>
-    <div class="card" >
-      <%= cl_image_tag cocktail.image, class: "card-img-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><%= cocktail.name %></h5>
-        <%= link_to "see details", cocktail_path(cocktail) %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" >
+    <%= link_to(cocktails_path) do %>
+    <div class="d-flex align-items-center ">
+      <div id="pentagram">
+        <i class="far fa-smile"></i>
       </div>
+      <h1 class="ml-2">Drink'em'all</h1>
     </div>
-  <% end %>
-  <%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-primary", style: "width: 100%"%>
+    <% end %>
+    <%= form_tag(cocktails_path, method: :get, class: "form-inline ml-auto") do %>
+      <%= text_field_tag :term, params[:term], class: "form-control media-mb" %>
+      <%= submit_tag 'Search', name: nil, class: "btn-ghost btn-ghost-og btn-md my-0 ml-sm-2" %>
+    <% end %>
+
+    <%#= image_tag("/Users/user/code/killeraliens/rails-mister-cocktail/app/assets/images/pentagram-icon.svg ") %>
 </div>
+
+
+
+<div class="container mb-5 mt-5">
+
+  <div class="cards" >
+
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to(cocktail) do %>
+        <div class="card-category" style="background-image: linear-gradient(120deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('<%= cocktail.image %>');" >
+          <h2><%= cocktail.name %></h2>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-ghost mt-3", style: "width: 100%"%>
+  <%= link_to "back to cocktails", cocktails_path,class: "btn btn-ghost mt-3" %>
+
+ </div>
 
 

@@ -1,33 +1,23 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
-  <div class="card">
+  <div class="card-bg">
     <div class="card-body">
       <h5 >Ingredients</h5>
       <ul>
       <%@cocktail.doses.each do |dose| %>
-        <li><%= dose.ingredient.name %> - <%= dose.description %><%= link_to "delete", dose_path(dose), method: :delete, style: "margin: 4px", class: "btn btn-danger btn-sm" %></li>
+        <li><%= dose.ingredient.name %> - <%= dose.description %><%= link_to "delete", dose_path(dose), method: :delete, style: "margin: 4px ", class: "" %></li>
       <% end %>
       </ul>
-      <%= link_to "create new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary", style: "width: 100%"; %>
+      <%= link_to "create new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-ghost mt-3", style: "width: 100%"; %>
       <%= simple_form_for @cocktail do |f| %>
-        <%= f.input :image %>
-        <%= f.input :image_cache, as: :hidden %>
-        <%= f.submit "Add Image", class: "btn btn-primary", style: "width:100%"; %>
+        <%= f.input :image, class: "btn btn-ghost mt-3" %>
+        <%= f.input :image_cache, as: :hidden, class: "btn btn-ghost mt-3" %>
+        <%#= f.submit "Add Image", class: "btn btn-ghost mt-3", style: "width: 100%"; %>
       <% end %>
 
     </div>
-
-
   </div>
-
-<!--   <div class="card">
-    <div class="card-body">
-      <h5 >Description</h5>
-      <p>A cocktail description</p>
-
-    </div>
-  </div> -->
-  <%= link_to "back to cocktails", cocktails_path, style: "margin-left: 24px;" %>
+  <%= link_to "back to cocktails", cocktails_path,class: "btn btn-ghost mt-3" %>
 </div>
 
 <!--

@@ -2,32 +2,29 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
-  padding: 16px 24px;
+  background: $black;
+  padding: 0px 24px;
+
 }
 
-.navbar-lewagon .brand {
-  width: 40px;
-}
-
-.navbar-lewagon .navbar-lewagon-actions {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-lewagon .navbar-lewagon-actions .navbar-lewagon-link {
-  margin-left: 24px;
-  color: #999999;
-}
-.navbar-lewagon .navbar-lewagon-actions .navbar-lewagon-link:hover {
-  color: #151515;
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .navbar-lewagon {
+    display: block;
+    padding-bottom: 8px;
+  }
+  .media-mb {
+    margin-right: 8px;
+    width: 70%;
+  }
+  .btn-ghost-og {
+  }
 }
 
 
-.navbar-lewagon .navbar-lewagon-actions .avatar {
-  margin-left: 24px;
-}
-
-.navbar-lewagon .dropdown-toggle {
-  cursor: pointer;
+// Medium devices (tablets, 768px and up)
+@media (min-width: 576px) {
+  .navbar-lewagon {
+    display: flex;
+  }
 }

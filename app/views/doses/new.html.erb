@@ -1,9 +1,17 @@
 <div class="container">
   <h1><%= @cocktail.name %> says Dose Me</h1>
 
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.association :ingredient, collection: Ingredient.all %>
-    <%= f.input :description %>
-    <%= f.submit "Add Dose", class: "btn btn-primary" %>
-  <% end %>
+  <div class="card-bg">
+    <div class="card-body">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.association :ingredient, collection: Ingredient.all %>
+        <%= f.input :description %>
+        <%= f.submit "Add Dose", class: "btn btn-ghost mt-3", style: "width: 100%"; %>
+      <% end %>
+    </div>
+  </div>
+  <div class="container">
+    <%= link_to "cancel", cocktails_path, class: "btn btn-ghost mt-3" %>
+
+  </div>
 </div>
