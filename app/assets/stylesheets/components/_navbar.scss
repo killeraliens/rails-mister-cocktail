@@ -3,8 +3,10 @@
   align-items: center;
   justify-content: space-between;
   background: $black;
-  padding: 0px 24px;
-
+  padding: 12px 24px;
+  a h1 {
+    margin: 0;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
