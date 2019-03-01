@@ -1,15 +1,17 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top" >
     <%= link_to(cocktails_path) do %>
-    <div class="d-flex align-items-center ">
+    <div class="d-flex align-items-center">
       <i class="far fa-smile pentagram"></i>
       <h1 class="ml-2">Drink'em'all</h1>
     </div>
     <% end %>
+    <div class="search_mbl">
     <%= form_tag(cocktails_path, method: :get, class: "form-inline ml-auto") do %>
-      <%= text_field_tag :term, params[:term], class: "form-control media-mb" %>
+      <%= text_field_tag :term, params[:term], class: "form-control media-mb grow" %>
       <%= submit_tag 'Search', name: nil, class: "btn-ghost btn-ghost-og btn-md my-0 ml-sm-2" %>
     <% end %>
+    </div>
 </div>
 
 
